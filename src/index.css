@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: #393c41;
+}
+
+body {
+  text-align: center;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes animateDown {
+  40% {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(3px);
+  }
+}
+
+@media (max-width: 600px) {
+  .animate {
+    animation: fadeIn 700ms linear;
+  }
+  @keyframes fadeIn {
+    from {
+      transform: translateY(70%);
+      opacity: 0.1;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.nav-menu {
+  position: fixed;
+  background: #fff;
+  width: 20em;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  padding: 2.7em 1em 0;
+  transition: all 0.7s ease;
+}
+
+.nav-menu ul li {
+  list-style: none;
+  height: 3em;
+  text-align: start;
+}
+
+.nav-menu li a {
+  padding-bottom: 0.7em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.active.hamburger {
+  transform: rotate(0.625turn);
+}
+
+.active.hamburger::before {
+  transform: rotate(90deg);
+}
+
+.active.hamburger::before {
+  top: calc(100% - 3px);
+}
+
+.active.hamburger::after {
+  opacity: 0;
+}
